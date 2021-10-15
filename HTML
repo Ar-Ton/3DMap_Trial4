@@ -1,0 +1,515 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Import glTF 3D Models | Sample | ArcGIS API for JavaScript 4.21</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.21/"></script>
+
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #paneDiv {
+        padding: 10px;
+        max-width: 200px;
+        background-color: rgba(0, 255, 255, 0.8);
+        font-size: 1.1em;
+      }
+
+      #credits {
+        font-size: 0.7em;
+        line-height: 1.1em;
+      }
+    </style>
+    <script>
+      require([
+        "esri/views/SceneView",
+        //"esri/WebScene",
+        "esri/Map",
+        "esri/layers/GraphicsLayer",
+        "esri/Graphic",
+        "esri/widgets/Sketch/SketchViewModel"
+      ], (SceneView, Map, GraphicsLayer, Graphic, SketchViewModel) => {
+
+        // load web scene from ArcGIS Online
+        const map = new Map({
+          basemap: "dark-gray-vector", // you can change the basemap to another basemap like 'topo' or 'streets'
+          ground: "world-elevation"
+        });
+
+        const view = new SceneView({
+          container:"viewDiv",
+          map: map,
+          //Setting a zoom level.
+          zoom: 11,
+          //Centering the Scene to a coordinate using an array.
+          center: [114.149086, 22.353066]
+        });
+
+
+
+        const graphicsLayer = new GraphicsLayer({
+          elevationInfo: { mode: "on-the-ground" }
+        });
+        view.map.add(graphicsLayer);
+
+        const tentBtn = document.getElementById("tent");
+        const canoeBtn = document.getElementById("canoe");
+        
+        
+        
+ 
+ //SITE BOUNDARY
+             const polygon3868 = {
+                type: "polygon",
+                rings: [
+                    [114.2046940, 22.3790079],
+                    [114.2026985, 22.3815773],
+                    [114.2007029, 22.3804067],
+                    [114.1999841, 22.3782440],
+                    [114.2012823, 22.3779563],
+                    [114.2026448, 22.3780555],
+                    [114.2046940, 22.3790079]
+                ]
+             };
+             const simpleFillSymbol3868 = {
+                type: "simple-fill",
+                color: [227, 139, 79, 0.5],  // 
+                outline: {
+                    color: [255, 255, 255, 0.2],
+                    width: 10
+                }
+             };
+             const popupTemplate3868 = {
+                title: "{Name}",
+                content: "{Description}"
+             };
+             const attributes3868 = {
+                Name: "J3868",
+                Description: "Prince of Walse Hospital"
+             };
+             const polygonGraphic3868 = new Graphic({
+                geometry: polygon3868,
+                symbol: simpleFillSymbol3868,
+                attributes: attributes3868,
+                popupTemplate: popupTemplate3868
+
+             });
+             graphicsLayer.add(polygonGraphic3868);
+             ///////////////////////////////////////////////////////////////////////////J3868END
+             //J3920//////////////////////////////////////////////////////SiteBoundary
+             const polygon3920 = {
+                type: "polygon",
+                rings: [
+                    [114.2261624, 22.4152488],
+                    [114.2261249, 22.4151446],
+                    [114.2263234, 22.4148421],
+                    [114.2263287, 22.4147330],
+                    [114.2262483, 22.4144553],
+                    [114.2260766, 22.4139941],
+                    [114.2258406, 22.4135280],
+                    [114.2255831, 22.4130618],
+                    [114.2253309, 22.4127940],
+                    [114.2250144, 22.4124121],
+                    [114.2254168, 22.4127395],
+                    [114.2258888, 22.4130668],
+                    [114.2262161, 22.4133296],
+                    [114.2265594, 22.4140040],
+                    [114.2268276, 22.4145347],
+                    [114.2269349, 22.4149413],
+                    [114.2267525, 22.4150355],
+                    [114.2261624, 22.4152488]
+                ]
+             };
+             const simpleFillSymbol3920 = {
+                type: "simple-fill",
+                color: [139, 227, 79, 0.5],  // 
+                outline: {
+                    color: [255, 255, 255, 0.2],
+                    width: 10
+                }
+             };
+             const popupTemplate3920 = {
+                title: "{Name}",
+                content: "{Description}"
+             };
+             const attributes3920 = {
+                Name: "J3920",
+                Description: "Ma On Shan"
+             };
+             const polygonGraphic3920 = new Graphic({
+                geometry: polygon3920,
+                symbol: simpleFillSymbol3920,
+                attributes: attributes3920,
+                popupTemplate: popupTemplate3920
+
+             });
+             graphicsLayer.add(polygonGraphic3920);
+             ///////////////////////////////////////////////////////////////////////////J3920END
+             //J3706//////////////////////////////////////////////////////SiteBoundary
+             const polygon3706 = {
+                type: "polygon",
+                rings: [
+                    [114.1937453, 22.3187458],
+                    [114.1937345, 22.3186317],
+                    [114.1935199, 22.3181999],
+                    [114.1939330, 22.3180560],
+                    [114.1940242, 22.3180759],
+                    [114.1941744, 22.3181056],
+                    [114.1942602, 22.3179667],
+                    [114.1943729, 22.3179121],
+                    [114.1946733, 22.3178327],
+                    [114.1948611, 22.3177980],
+                    [114.1951025, 22.3178029],
+                    [114.1953546, 22.3178228],
+                    [114.1957945, 22.3179270],
+                    [114.1962075, 22.3180262],
+                    [114.1964275, 22.3181156],
+                    [114.1960251, 22.3188451],
+                    [114.1959500, 22.3187954],
+                    [114.1956818, 22.3186962],
+                    [114.1954350, 22.3186416],
+                    [114.1951829, 22.3185870],
+                    [114.1948879, 22.3185374],
+                    [114.1946357, 22.3185076],
+                    [114.1944855, 22.3185126],
+                    [114.1942871, 22.3186019],
+                    [114.1942334, 22.3185374],
+                    [114.1937453, 22.3187458]
+                ]
+             };
+             const simpleFillSymbol3706 = {
+                type: "simple-fill",
+                color: [139, 79, 227, 0.5],  // 
+                outline: {
+                    color: [255, 255, 255,0.2],
+                    width: 10
+                }
+             };
+             const popupTemplate3706 = {
+                title: "{Name}",
+                content: "{Description}"
+             };
+             const attributes3706 = {
+                Name: "J3706",
+                Description: "Kai Tak West"
+             };
+             const polygonGraphic3706 = new Graphic({
+                geometry: polygon3706,
+                symbol: simpleFillSymbol3706,
+                attributes: attributes3706,
+                popupTemplate: popupTemplate3706
+
+             });
+             graphicsLayer.add(polygonGraphic3706);
+             ///////////////////////////////////////////////////////////////////////////J3706END
+              //J3911//////////////////////////////////////////////////////SiteBoundary
+             const polygon3911 = {
+                type: "polygon",
+                rings: [
+                  [113.9415425, 22.3140909],
+                  [113.9403677, 22.3138675],
+                  [113.9403248, 22.3137584],
+                  [113.9402229, 22.3136343],
+                  [113.9400566, 22.3135648],
+                  [113.9385653, 22.3120214],
+                  [113.9395899, 22.3109594],
+                  [113.9398205, 22.3112125],
+                  [113.9401424, 22.3116194],
+                  [113.9405125, 22.3120363],
+                  [113.9410490, 22.3125425],
+                  [113.9416552, 22.3129395],
+                  [113.9425403, 22.3132571],
+                  [113.9419019, 22.3139817],
+                  [113.9418268, 22.3139519],
+                  [113.9416659, 22.3139569],
+                  [113.9415425, 22.3140909]
+
+                ]
+             };
+             const simpleFillSymbol3911 = {
+                type: "simple-fill",
+                color: [139, 227, 227, 0.5],  // 
+                outline: {
+                    color: [255, 255, 255, 0.2],
+                    width: 10
+                }
+             };
+             const popupTemplate3911 = {
+                title: "{Name}",
+                content: "{Description}"
+             };
+             const attributes3911 = {
+                Name: "J3911",
+                Description: "Terminal 2"
+             };
+             const polygonGraphic3911 = new Graphic({
+                geometry: polygon3911,
+                symbol: simpleFillSymbol3911,
+                attributes: attributes3911,
+                popupTemplate: popupTemplate3911
+
+             });
+             graphicsLayer.add(polygonGraphic3911);
+             ///////////////////////////////////////////////////////////////////////////J3911END
+             //J3903//////////////////////////////////////////////////////SiteBoundary
+             const polygon3903A = {
+                type: "polygon",
+                rings: [
+                  [114.1621488, 22.3122398],
+                  [114.1621113, 22.3115996],
+                  [114.1621435, 22.3111728],
+                  [114.1621542, 22.3108700],
+                  [114.1622078, 22.3105871],
+                  [114.1622669, 22.3105474],
+                  [114.1624707, 22.3104631],
+                  [114.1626531, 22.3103539],
+                  [114.1629267, 22.3101703],
+                  [114.1630340, 22.3102497],
+                  [114.1629696, 22.3104035],
+                  [114.1628784, 22.3106219],
+                  [114.1627818, 22.3109197],
+                  [114.1627228, 22.3111430],
+                  [114.1626799, 22.3114209],
+                  [114.1625619, 22.3116095],
+                  [114.1623312, 22.3119370],
+                  [114.1621488, 22.3122398],
+                  [114.1621488, 22.3122398]
+                ]
+             };
+             const simpleFillSymbol3903A = {
+                type: "simple-fill",
+                color: [0, 50, 227, 0.5],  // 
+                outline: {
+                    color: [255, 255, 255, 0.2],
+                    width: 10
+                }
+             };
+             const popupTemplate3903A = {
+                title: "{Name}",
+                content: "{Description}"
+             };
+             const attributes3903A = {
+                Name: "J3903",
+                Description: "CKR-BEM Yau Ma Tei"
+             };
+             const polygonGraphic3903A = new Graphic({
+                geometry: polygon3903A,
+                symbol: simpleFillSymbol3903A,
+                attributes: attributes3903A,
+                popupTemplate: popupTemplate3903A
+
+             });
+             graphicsLayer.add(polygonGraphic3903A);
+
+             const polygon3903B = {
+                type: "polygon",
+                rings: [
+                  [114.1993511, 22.3239266],
+                  [114.1993511, 22.3236686],
+                  [114.1992867, 22.3234602],
+                  [114.1985679, 22.3216638],
+                  [114.1984928, 22.3213561],
+                  [114.1985464, 22.3210583],
+                  [114.1996086, 22.3201452],
+                  [114.2000914, 22.3203636],
+                  [114.2006707, 22.3218722],
+                  [114.2012286, 22.3229341],
+                  [114.2015076, 22.3237281],
+                  [114.2011642, 22.3238174],
+                  [114.2003059, 22.3238968],
+                  [114.1993511, 22.3239266]
+
+                ]
+             };
+             const simpleFillSymbol3903B = {
+                type: "simple-fill",
+                color: [0, 50, 227, 0.5],  // 
+                outline: {
+                    color: [255, 255, 255, 0.2],
+                    width: 10
+                }
+             };
+             const popupTemplate3903B = {
+                title: "{Name}",
+                content: "{Description}"
+             };
+             const attributes3903B = {
+                Name: "J3903",
+                Description: "CKR-BEM Kai Tak East"
+             };
+             const polygonGraphic3903B = new Graphic({
+                geometry: polygon3903B,
+                symbol: simpleFillSymbol3903B,
+                attributes: attributes3903B,
+                popupTemplate: popupTemplate3903B
+
+             });
+             graphicsLayer.add(polygonGraphic3903B);
+             ///////////////////////////////////////////////////////////////////////////J3903END
+             //J3835//////////////////////////////////////////////////////SiteBoundary
+             const polygon3835 = {
+                type: "polygon",
+                rings: [
+                  [114.2543900, 22.4308245],
+                  [114.2543685, 22.4303683],
+                  [114.2579091, 22.4300013],
+                  [114.2600226, 22.4291782],
+                  [114.2615032, 22.4262030],
+                  [114.2626405, 22.4242989],
+                  [114.2636704, 22.4229897],
+                  [114.2645502, 22.4225930],
+                  [114.2650867, 22.4235650],
+                  [114.2642069, 22.4248939],
+                  [114.2629194, 22.4267981],
+                  [114.2621684, 22.4279286],
+                  [114.2612243, 22.4294757],
+                  [114.2600226, 22.4302493],
+                  [114.2590570, 22.4305666],
+                  [114.2576194, 22.4307253],
+                  [114.2555165, 22.4309038],
+                  [114.2546368, 22.4309038],
+                  [114.2543900, 22.4308245]
+
+                ]
+             };
+             const simpleFillSymbol3835 = {
+                type: "simple-fill",
+                color: [255, 255, 0, 0.5],  // 
+                outline: {
+                    color: [255, 255, 255, 0.2],
+                    width: 10
+                }
+             };
+             const popupTemplate3835 = {
+                title: "{Name}",
+                content: "{Description}"
+             };
+             const attributes3835 = {
+                Name: "J3835",
+                Description: "Sai Sha Road"
+             };
+             const polygonGraphic3835 = new Graphic({
+                geometry: polygon3835,
+                symbol: simpleFillSymbol3835,
+                attributes: attributes3835,
+                popupTemplate: popupTemplate3835
+
+             });
+             graphicsLayer.add(polygonGraphic3835);
+             ///////////////////////////////////////////////////////////////////////////J3911END
+//SITE Boundary End//
+
+        
+        const sktvmRCD1 = new SketchViewModel({
+          layer: graphicsLayer,
+          view: view
+        })
+        sktvmRCD1.pointSymbol = {
+          type: "point-3d",
+          symbolLayers:[
+            {
+              type: "object",          
+              resource: {
+                href: "https://developers.arcgis.com/javascript/latest/sample-code/import-gltf/live/tent.glb"
+              },
+              width: 50,
+              Position:  { 
+                x: 114.149086, 
+                y: 22.353066,
+                z: 1000
+              } // equivalent to `anchor: "bottom"`
+            }
+          ]
+        };
+        sktvmRCD1.create("point");
+        
+        
+        view.when(() => {
+          // This sample uses the SketchViewModel to add points to a
+          // GraphicsLayer. The points have 3D glTF models as symbols.
+          const sketchVM = new SketchViewModel({
+            layer: graphicsLayer,
+            view: view
+          });
+
+          tentBtn.addEventListener("click", () => {
+            // reference the relative path to the glTF model
+            // in the resource of an ObjectSymbol3DLayer
+            sketchVM.pointSymbol = {
+              type: "point-3d",
+              symbolLayers: [
+                {
+                  type: "object",
+                  resource: {
+                    href: "https://developers.arcgis.com/javascript/latest/sample-code/import-gltf/live/tent.glb"
+                  }
+                }
+              ]
+            };
+            sketchVM.create("point");
+            deactivateButtons();
+            this.classList.add("esri-button--secondary");
+          });
+
+          canoeBtn.addEventListener("click", () => {
+            // reference the relative path to the glTF model
+            // in the resource of an ObjectSymbol3DLayer
+            sketchVM.pointSymbol = {
+              type: "point-3d",
+              symbolLayers: [
+                {
+                  type: "object",
+                  resource: {
+                    href: "https://developers.arcgis.com/javascript/latest/sample-code/import-gltf/live/canoe.glb"
+                  }
+                }
+              ]
+            };
+            deactivateButtons();
+            sketchVM.create("point");
+            this.classList.add("esri-button--secondary");
+          });
+
+          sketchVM.on("create", (event) => {
+            if (event.state === "complete") {
+              sketchVM.update(event.graphic);
+              deactivateButtons();
+            }
+          });
+
+        })
+        .catch(console.error);
+        
+        function deactivateButtons() {
+          const elements = Array.prototype.slice.call(document.getElementsByClassName("esri-button"));
+          elements.forEach((element) => {
+              element.classList.remove("esri-button--secondary");
+          });
+        }
+
+
+        view.ui.add("paneDiv", "top-right");
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+    <div id="paneDiv" class="esri-widget">
+      <p>Select a symbol and place it in the scene: </p>
+      <button id="tent" class="esri-button">Tent</button><br/>
+      <button id="canoe" class="esri-button">Canoe</button>
+      <p id="credits"> Tent and canoe glTF models from <a href="https://www.kenney.nl/assets/" target="_blank">Kenney game assets</a>
+        under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 1.0 Universal</a>.</p>
+    </div>
+  </body>
+</html>
